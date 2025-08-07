@@ -90,16 +90,25 @@ const App = () => {
   ]);
 
 
-  return
-  <>
-  <h1>Hello world!</h1>;
-  
-  
-  
-  
-  
-  
-  </>
+  return (
+    <>
+      <h1>Hello world!</h1>
+      <ul>
+        {zombieFighters.map((fighter) => {
+          const { id, name, price, strength, agility, img } = fighter;
+          return (
+            <li key={id}>
+              <img src={img} alt="Fighter Image" />
+              <h3>{name}</h3>
+              <p>${price}</p>
+              <p>Strength:{strength}</p>
+              <p>Agility:{agility}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
 };
 
 
