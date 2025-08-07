@@ -107,6 +107,24 @@ const App = () => {
   return (
     <>
       <h1>Current Money: ${money}</h1>
+
+      <h2>My Team:</h2>
+        {team.length === 0 && "Pick your team members" }
+        <ul>
+        {team.map((fighter) => {
+          const { id, name, price, strength, agility, img } = fighter
+          return (
+            <li key={id}>
+              <img src={img} alt="Fighter Image" />
+              <h3>{name}</h3>
+              <p>${price}</p>
+              <p>Strength:{strength}</p>
+              <p>Agility:{agility}</p>
+            </li>
+          );
+        })};
+          </ul>
+        <h3>Choose Team Members:</h3>
       <ul>
         {zombieFighters.map((fighter) => {
           const { id, name, price, strength, agility, img } = fighter;
