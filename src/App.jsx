@@ -110,6 +110,7 @@ const App = () => {
     });
     setTeam(newTeam);
     const newZombieFighter = [...zombieFighters, fighterObj]
+    setZombieFighters(newZombieFighter)
     setMoney(money + fighterObj.price)
   };
 
@@ -128,7 +129,7 @@ const App = () => {
       <h2>My Team:</h2>
       <h3>Team Strength: {totalStrength}</h3>
       <h3>Team Agility: { totalAgility}</h3>
-        {team.length === 0 && "Pick your team members"}
+      {team.length === 0 && <p> Pick your team members</p>}
         <ul>
         {team.map((fighter) => {
           const { id, name, price, strength, agility, img } = fighter
